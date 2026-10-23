@@ -1,0 +1,367 @@
+
+/* =========================
+   TESTIMONIAL SECTION
+========================= */
+
+.testimonialsSection {
+  width: 100%;
+  padding: 85px 0;
+  overflow: hidden;
+  background-color: #FDFBF2;
+}
+
+.container {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1530px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+/* =========================
+   CENTERED SECTION HEADER
+========================= */
+
+.sectionHeader {
+  max-width: 760px;
+  margin: 0 auto 45px;
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: #4C0F17;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  line-height: 1.6;
+}
+
+.heading {
+  margin: 0 0 18px;
+  color: #04252A;
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.intro {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #626262;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+/* =========================
+   HORIZONTAL CAROUSEL
+   Desktop: 2 full cards
+   plus approximately half of the third
+========================= */
+
+.testimonialCarousel {
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  gap: 24px;
+  padding: 8px 0 20px;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* Hide scrollbar while keeping scrolling enabled */
+
+.testimonialCarousel::-webkit-scrollbar {
+  display: none;
+}
+
+.testimonialCarousel:focus-visible {
+  outline: 2px solid #4C0F17;
+  outline-offset: 4px;
+}
+
+/* =========================
+   TESTIMONIAL CARDS
+   Wide desktop: 569 x 569px
+========================= */
+
+.testimonialCard {
+  box-sizing: border-box;
+  display: flex;
+
+  flex: 0 0 min(569px, calc((100% - 48px) / 2.5));
+  width: min(569px, calc((100% - 48px) / 2.5));
+  aspect-ratio: 1 / 1;
+  min-width: 0;
+  flex-direction: column;
+
+  overflow: hidden;
+  border: none;
+  border-radius: 10px;
+
+  background-color: #FFFFFF;
+  text-align: left;
+
+  box-shadow: 0 5px 22px rgba(4, 37, 42, 0.06);
+
+  scroll-snap-align: start;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Card hover effect */
+
+.testimonialCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 32px rgba(4, 37, 42, 0.12);
+}
+
+/* =========================
+   CARD IMAGE
+   Desktop: 569 x 326px
+========================= */
+
+.imageWrapper {
+  position: relative;
+  display: block;
+
+  width: 100%;
+  height: auto;
+  aspect-ratio: 569 / 326;
+  flex: 0 0 auto;
+
+  overflow: hidden;
+  background-color: #EAE5DB;
+}
+
+.testimonialImage {
+  object-fit: cover;
+  object-position: center;
+
+  transition: transform 0.5s ease;
+}
+
+/* Normal image zoom for cards other than the second */
+
+.testimonialCard:not(:nth-child(2)):hover .testimonialImage {
+  transform: scale(1.04);
+}
+
+/* =========================
+   SECOND CARD IMAGE
+   Show BOTH faces without cropping
+   or stretching the photo
+========================= */
+
+.testimonialCard:nth-child(2) .imageWrapper {
+  background-color: #FFFFFF;
+}
+
+.testimonialCard:nth-child(2) .testimonialImage {
+  object-fit: contain;
+  object-position: center center;
+}
+
+/* Do not zoom or crop the second photo on hover */
+
+.testimonialCard:nth-child(2):hover .testimonialImage {
+  transform: none;
+}
+
+/* =========================
+   CARD CONTENT
+   Bottom padding: 27px
+   Heading-to-paragraph gap: 10px
+========================= */
+
+.cardContent {
+  box-sizing: border-box;
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+
+  padding: 24px 24px 27px;
+  text-align: left;
+}
+
+/* Card heading */
+
+.cardHeading {
+  width: 100%;
+  margin: 0;
+
+  color: #04252A;
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1.45;
+
+  text-align: left;
+}
+
+/* Testimonial paragraph */
+
+.cardDescription {
+  width: 100%;
+  margin: 0;
+
+  color: #666666;
+  font-size: 0.94rem;
+  font-weight: 400;
+  line-height: 1.8;
+
+  text-align: left;
+}
+
+/* =========================
+   TABLET RESPONSIVENESS
+========================= */
+
+@media (max-width: 991.98px) {
+  .testimonialsSection {
+    padding: 70px 0;
+  }
+
+  .container {
+    padding: 0 24px;
+  }
+
+  .sectionHeader {
+    margin-bottom: 35px;
+  }
+
+  .heading {
+    font-size: 2.2rem;
+  }
+
+  .testimonialCarousel {
+    gap: 20px;
+  }
+
+  .testimonialCard {
+    flex: 0 0 min(569px, 72vw);
+    width: min(569px, 72vw);
+  }
+
+  .imageWrapper {
+    height: auto;
+    flex: 0 0 auto;
+    aspect-ratio: 569 / 326;
+  }
+
+  .cardContent {
+    flex: 1;
+    min-height: 0;
+    gap: 10px;
+    padding: 20px 20px 27px;
+  }
+
+  .cardHeading {
+    font-size: 1.2rem;
+  }
+
+  .cardDescription {
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+}
+
+/* =========================
+   MOBILE RESPONSIVENESS
+========================= */
+
+@media (max-width: 575.98px) {
+  .testimonialsSection {
+    padding: 55px 0;
+  }
+
+  .container {
+    padding: 0 18px;
+  }
+
+  .sectionHeader {
+    margin-bottom: 28px;
+  }
+
+  .eyebrow {
+    font-size: 0.72rem;
+  }
+
+  .heading {
+    margin-bottom: 14px;
+    font-size: 1.85rem;
+    line-height: 1.35;
+  }
+
+  .intro {
+    font-size: 0.92rem;
+    line-height: 1.75;
+  }
+
+  .testimonialCarousel {
+    gap: 16px;
+    padding-bottom: 16px;
+  }
+
+  .testimonialCard {
+    flex: 0 0 82%;
+    width: 82%;
+    aspect-ratio: auto;
+    height: auto;
+  }
+
+  .imageWrapper {
+    height: auto;
+    flex: 0 0 auto;
+    aspect-ratio: 569 / 326;
+  }
+
+  .cardContent {
+    flex: 1;
+    min-height: 0;
+    gap: 10px;
+    padding: 14px 14px 27px;
+  }
+
+  .cardHeading {
+    font-size: 1.05rem;
+    line-height: 1.4;
+  }
+
+  .cardDescription {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .testimonialCard,
+  .testimonialImage {
+    transition: none;
+  }
+
+  .testimonialCard:hover {
+    transform: none;
+  }
+
+  .testimonialCard:not(:nth-child(2)):hover .testimonialImage {
+    transform: none;
+  }
+}

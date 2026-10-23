@@ -1,0 +1,397 @@
+
+.footer {
+  width: 100%;
+  color: #ffffff;
+  background: linear-gradient(
+    232.77deg,
+    #04252a -1.31%,
+    #4c0f17 102.6%
+  );
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1530px;
+  margin: 0 auto;
+  padding: 65px 40px 22px;
+  box-sizing: border-box;
+}
+
+/* Main layout: 80% content and 20% image */
+
+.footerMain {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 1fr);
+  gap: 30px;
+  align-items: start;
+}
+
+.footerLeft {
+  min-width: 0;
+}
+
+/* Logo, description and social links */
+
+.brandSection {
+  max-width: 560px;
+  margin-bottom: 48px;
+}
+
+.logoLink {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.logo {
+  display: block;
+  width: 180px;
+  height: auto;
+  object-fit: contain;
+}
+
+.description {
+  max-width: 480px;
+  margin: 0 0 22px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.socialLinks {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.socialLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  transition:
+    background-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.socialLink img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.socialLink:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-3px);
+}
+
+/* Three information columns */
+
+.footerInfo {
+  display: grid;
+  grid-template-columns: 1.1fr 0.8fr 1.2fr;
+  gap: 32px;
+}
+
+.infoColumn {
+  min-width: 0;
+}
+
+.columnHeading {
+  position: relative;
+  margin: 0 0 24px;
+  padding-bottom: 12px;
+  color: #ffffff;
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.columnHeading::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 38px;
+  height: 2px;
+  background-color: #ffffff;
+  content: "";
+}
+
+.subHeading {
+  margin: 0 0 10px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.contactList,
+.quickLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+}
+
+.contactList li,
+.quickLinks li {
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.contactList a,
+.quickLinks a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contactList a:hover,
+.quickLinks a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.address {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+/* Recent posts */
+
+.recentPosts {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.recentPost {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
+}
+
+.postImageLink {
+  display: block;
+  flex: 0 0 76px;
+  width: 76px;
+  height: 76px;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.postImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.postImageLink:hover .postImage {
+  transform: scale(1.06);
+}
+
+.postContent {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.postDate {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.postTitle {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.6;
+  text-decoration: none;
+}
+
+.postTitle:hover {
+  text-decoration: underline;
+}
+
+/* Right-side image aligned with the logo */
+
+.footerRight {
+  min-width: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.footerImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 600px;
+  object-fit: contain;
+  object-position: top center;
+  border-radius: 8px;
+}
+
+/* Copyright and developer credit */
+
+.footerBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 48px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.copyright,
+.poweredBy {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.poweredBy {
+  text-align: right;
+}
+
+.heart {
+  color: #ff5b68;
+  font-size: 16px;
+}
+
+.poweredBy a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.poweredBy a:hover {
+  text-decoration: underline;
+}
+
+/* Tablet */
+
+@media (max-width: 1100px) {
+  .container {
+    padding-right: 28px;
+    padding-left: 28px;
+  }
+
+  .footerMain {
+    grid-template-columns: minmax(0, 4fr) minmax(0, 1fr);
+    gap: 22px;
+  }
+
+  .footerInfo {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px 24px;
+  }
+
+  .footerImage {
+    max-height: 500px;
+  }
+}
+
+/* Mobile and small tablets */
+
+@media (max-width: 767px) {
+  .container {
+    padding: 48px 22px 20px;
+  }
+
+  .footerMain {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 36px;
+  }
+
+  .brandSection {
+    margin-bottom: 36px;
+  }
+
+  .footerInfo {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px 22px;
+  }
+
+  .footerRight {
+    width: 100%;
+    min-height: 0;
+    max-height: none;
+  }
+
+  .footerImage {
+    width: 100%;
+    height: auto;
+    max-height: 420px;
+    object-fit: contain;
+    object-position: top center;
+  }
+
+  .footerBottom {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 36px;
+    padding-top: 18px;
+  }
+
+  .poweredBy {
+    text-align: left;
+  }
+}
+
+/* Small mobile screens */
+
+@media (max-width: 480px) {
+  .container {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .footerInfo {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .columnHeading {
+    margin-bottom: 18px;
+  }
+
+  .footerImage {
+    max-height: 320px;
+  }
+
+  .copyright,
+  .poweredBy {
+    font-size: 11px;
+  }
+}
+
+/* Accessibility: reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .socialLink,
+  .postImage {
+    transition: none;
+  }
+
+  .socialLink:hover {
+    transform: none;
+  }
+}

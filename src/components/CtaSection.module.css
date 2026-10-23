@@ -1,0 +1,248 @@
+
+/* =========================
+   CTA SECTION BACKGROUND
+========================= */
+
+.ctaSection {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 90px 0;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(4, 37, 42, 0.92) 0%,
+      rgba(4, 37, 42, 0.82) 55%,
+      rgba(76, 15, 23, 0.72) 100%
+    ),
+    url("/cta-bg.png");
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* =========================
+   TWO-COLUMN CONTAINER
+========================= */
+
+.container {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 64px;
+
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+/* =========================
+   LEFT COLUMN CONTENT
+========================= */
+
+.ctaContent {
+  width: 100%;
+  max-width: 540px;
+}
+
+.eyebrow {
+  margin: 0 0 16px;
+
+  color: #F2C879;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  line-height: 1.6;
+}
+
+.heading {
+  margin: 0 0 22px;
+
+  color: #FFFFFF;
+  font-size: 2.8rem;
+  font-weight: 600;
+  line-height: 1.2;
+  overflow-wrap: break-word;
+}
+
+.description {
+  margin: 0 0 30px;
+
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.85;
+}
+
+/* =========================
+   YELLOW CTA BUTTON
+========================= */
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 52px;
+  padding: 14px 28px;
+
+  border: none;
+  border-radius: 4px;
+
+  background-color: #F2C879;
+  color: #000c0e;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.4;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
+}
+
+/* Keep the button yellow on hover */
+
+.ctaButton:hover {
+  background-color: #F2C879;
+  color: #04252A;
+  transform: translateY(-2px);
+}
+
+.ctaButton:focus-visible {
+  outline: 2px solid #FFFFFF;
+  outline-offset: 4px;
+}
+
+/* =========================
+   RIGHT COLUMN IMAGE
+   No background, border or shadow
+========================= */
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  aspect-ratio: 5 / 4;
+  overflow: hidden;
+}
+
+.ctaImage {
+  object-fit: cover;
+  object-position: center;
+
+  transition: transform 0.6s ease;
+}
+
+/* Subtle image zoom on hover */
+
+.imageWrapper:hover .ctaImage {
+  transform: scale(1.03);
+}
+
+/* =========================
+   TABLET RESPONSIVENESS
+========================= */
+
+@media (max-width: 991.98px) {
+  .ctaSection {
+    padding: 70px 0;
+  }
+
+  .container {
+    gap: 36px;
+    padding: 0 24px;
+  }
+
+  .heading {
+    font-size: 2.25rem;
+  }
+
+  .description {
+    font-size: 0.95rem;
+  }
+}
+
+/* =========================
+   MOBILE RESPONSIVENESS
+========================= */
+
+@media (max-width: 767.98px) {
+  .ctaSection {
+    padding: 55px 0;
+    background-position: center;
+  }
+
+  .container {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 34px;
+    padding: 0 20px;
+  }
+
+  .ctaContent {
+    max-width: 100%;
+  }
+
+  .eyebrow {
+    margin-bottom: 12px;
+    font-size: 0.72rem;
+  }
+
+  .heading {
+    margin-bottom: 18px;
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+
+  .description {
+    margin-bottom: 24px;
+    font-size: 0.94rem;
+    line-height: 1.75;
+  }
+
+  .ctaButton {
+    min-height: 48px;
+    padding: 12px 24px;
+    font-size: 0.9rem;
+  }
+
+  .imageWrapper {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* Small mobile screens */
+
+@media (max-width: 380px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .heading {
+    font-size: 1.75rem;
+  }
+
+  .imageWrapper {
+    aspect-ratio: 1 / 1;
+  }
+}
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+  .ctaButton,
+  .ctaImage {
+    transition: none;
+  }
+
+  .ctaButton:hover,
+  .imageWrapper:hover .ctaImage {
+    transform: none;
+  }
+}
