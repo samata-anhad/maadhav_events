@@ -1,26 +1,65 @@
 
+/* ========================================
+   MAIN NAVBAR
+======================================== */
+
 .navbar {
   position: absolute;
   top: 0;
   left: 0;
   z-index: 1000;
+
   width: 100%;
   min-height: 85px;
-  background-color: transparent;
+
+  background: transparent;
   box-shadow: none;
 }
+
+/* ========================================
+   NAVBAR CONTAINER
+   40px LEFT + 40px RIGHT
+======================================== */
+
+.navbar :global(.container) {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+
+  width: calc(100% - 80px);
+  max-width: none;
+
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* ========================================
+   FIRST COLUMN: LOGO
+======================================== */
 
 .brand {
   display: flex;
   align-items: center;
-  margin-right: 0;
+  justify-content: flex-start;
+
+  min-width: 0;
+  margin: -20px 0 0;
+  padding: 0;
 }
 
 .logo {
+  display: block;
+
   width: 160px;
+  max-width: 100%;
   height: auto;
+
   object-fit: contain;
 }
+
+/* ========================================
+   MOBILE MENU TOGGLE
+======================================== */
 
 .toggle {
   border: 1px solid rgba(255, 255, 255, 0.65);
@@ -35,60 +74,226 @@
   filter: brightness(0) invert(1);
 }
 
-.nav {
+/* ========================================
+   SECOND COLUMN: NAV LINKS + CTA
+======================================== */
+
+.navbar :global(.navbar-collapse) {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-left: auto;
+  justify-content: flex-end;
+
+  min-width: 0;
+  margin: 0;
 }
 
+/* ========================================
+   NAVIGATION LINKS
+======================================== */
+
+.nav:global(.navbar-nav) {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 16px;
+
+  margin: 0;
+  padding: 0;
+
+  flex-wrap: nowrap;
+}
+
+/* Individual navigation link */
+
 .navLink {
-  color: #ffffff !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 3px;
+
+  color: #FFFFFF !important;
+  font-size: 14px;
   font-weight: 500;
-  padding: 10px 12px;
+
   text-decoration: none;
+  white-space: nowrap;
+
   transition: color 0.2s ease;
 }
 
+/* Hover and focus */
+
 .navLink:hover,
-.navLink:focus {
-  color: #f2c879 !important;
+.navLink:focus-visible {
+  color: #DCB140 !important;
 }
 
-.ctaButton:global(.btn-primary) {
-  margin-left: 12px;
-  padding: 11px 22px;
-  border-radius: 6px;
+/* Active page link */
+
+.active {
+  color: #DCB140 !important;
   font-weight: 600;
 }
 
-.ctaButton:global(.btn-primary:hover) {
-  background-color: #0b5ed7;
-  border-color: #0a58ca;
+/* ========================================
+   CTA BUTTON
+======================================== */
+
+.ctaButton:global(.btn-primary) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  margin-left: 10px;
+  padding: 11px 18px;
+
+  border: 1px solid #DCB140;
+  border-radius: 6px;
+
+  background-color: #DCB140;
+  color: #070000;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  text-decoration: none;
+  white-space: nowrap;
+
+  box-shadow: none;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
 }
+
+/* CTA hover and focus */
+
+.ctaButton:global(.btn-primary:hover),
+.ctaButton:global(.btn-primary:focus-visible) {
+  background-color: #C49B32;
+  border-color: #C49B32;
+  color: #FFFFFF;
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1199.98px) {
+  .navbar :global(.container) {
+    width: calc(100% - 80px);
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+  }
+
+  .logo {
+    width: 145px;
+  }
+
+  .nav:global(.navbar-nav) {
+    gap: 10px;
+  }
+
+  .navLink {
+    font-size: 13px;
+  }
+
+  .ctaButton:global(.btn-primary) {
+    margin-left: 8px;
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+}
+
+/* ========================================
+   MOBILE NAVBAR
+======================================== */
 
 @media (max-width: 991.98px) {
   .navbar {
     min-height: 75px;
   }
 
-  .nav {
+  .navbar :global(.container) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    width: calc(100% - 80px);
+    padding: 0;
+  }
+
+  .brand {
+    margin-right: auto;
+  }
+
+  .navbar :global(.navbar-collapse) {
+    display: block;
+
+    width: 100%;
+    margin-top: 12px;
+  }
+
+  .nav:global(.navbar-nav) {
+    display: flex;
+    flex-direction: column;
     align-items: stretch;
-    gap: 0;
-    margin-left: 0;
-    margin-top: 10px;
+
+    gap: 4px;
+
+    width: 100%;
+    margin: 0;
     padding: 16px;
+
     border-radius: 10px;
     background-color: rgba(12, 17, 29, 0.96);
   }
 
   .navLink {
+    justify-content: flex-start;
     padding: 10px 0;
+
+    font-size: 14px;
+    white-space: normal;
   }
 
   .ctaButton:global(.btn-primary) {
-    align-self: flex-start;
-    margin-left: 0;
-    margin-top: 8px;
+    margin: 8px 0 0;
+    padding: 10px 16px;
+  }
+}
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 575.98px) {
+  .navbar {
+    min-height: 70px;
+  }
+
+  .navbar :global(.container) {
+    width: calc(100% - 40px);
+  }
+
+  .logo {
+    width: 135px;
+  }
+}
+
+/* ========================================
+   REDUCED MOTION ACCESSIBILITY
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .navLink,
+  .ctaButton:global(.btn-primary) {
+    transition: none;
   }
 }

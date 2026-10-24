@@ -6,27 +6,39 @@ import styles from "./EventsWeDo.module.css";
 const events = [
   {
     name: "Weddings",
-    image: "/wedding.jpg",
+    image: "/wedding.png",
   },
   {
-    name: "Birthday Parties",
-    image: "/birthday.jpg",
+    name: "Soulful Events",
+    image: "/soulful-events.png",
   },
   {
     name: "Corporate Events",
-    image: "/corporate.jpg",
+    image: "/corporate-events.png",
   },
   {
     name: "Anniversaries",
-    image: "/anniversary.jpg",
+    image: "/anniversery.png",
   },
   {
-    name: "Engagements",
-    image: "/engagement.jpg",
+    name: "Birthday Parties",
+    image: "/birthday-parties.png",
   },
   {
-    name: "Catering",
-    image: "/catering.jpg",
+    name: "Personal Event",
+    image: "/personal-events.png",
+  },
+  {
+    name: "Weddings",
+    image: "/wedding.png",
+  },
+  {
+    name: "Soulful Events",
+    image: "/soulful-events.png",
+  },
+  {
+    name: "Corporate Events",
+    image: "/corporate-events.png",
   },
 ];
 

@@ -10,18 +10,14 @@ export default function WhyContactUs() {
     >
       <div className={styles.container}>
         <h2 className={styles.heading}>
-          Why Contact Us
+          Event Management<br></br>
+          That Understands You
         </h2>
 
         <p className={styles.description}>
-          At Maadhav Events & Caterers, we believe every
-          celebration deserves to be extraordinary. From
-          weddings and birthdays to corporate gatherings
-          and special occasions, our team brings thoughtful
-          planning, beautiful decorations, and exceptional
-          catering together to make your event memorable.
-          We take care of the details so you can focus on
-          enjoying every special moment with your guests.
+          An event is more than a venue, a menu or a beautifully decorated space. It is about bringing people together and creating an experience that means something.
+          As an event management company serving Kolkata and Burdwan, Maadhav Events understands your expectations first. Whether you need complete event management or assistance with specific services, we work around your requirements.
+          From coordinating décor and catering to arranging manpower and logistics, our goal is to make your event a success while keeping your priorities at the centre of every decision.
         </p>
       </div>
     </section>

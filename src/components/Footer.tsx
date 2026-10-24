@@ -212,8 +212,7 @@ export default function Footer() {
         {/* Copyright and developer credit */}
         <div className={styles.footerBottom}>
           <p className={styles.copyright}>
-            © {new Date().getFullYear()} Maadhav Event & Caterers.
-            All rights reserved.
+            © 2026 Maadhav Event & Caterers.
           </p>
 
           <p className={styles.poweredBy}>

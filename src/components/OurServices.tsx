@@ -5,29 +5,39 @@ import styles from "./OurServices.module.css";
 
 const services = [
   {
-    title: "Venue",
+    title: "Wedding & Traditional Event Management",
     description:
-      "Discover the perfect venue for your special occasion, from elegant banquet halls to beautiful outdoor spaces.",
+      "From Marwari weddings to other traditional weddings, we bring together arrangements that respect your traditions, heritage and preferences.",
+    icon: "/icons/Ornate Gradient Wedding Mandap Icon 1.svg",
+    alt: "Wedding event management",
+  },
+  {
+    title: "Religious Event Management",
+    description:
+      "We help organise religious celebrations such as Bhagwat, Kirtan and other religious gatherings with thoughtful coordination, attention to detail and an understanding of the occasion.",
+    icon: "/icons/Intricate White Ganesha Mandap Line Art 1.svg",
+    alt: "Religious event management",
+  },
+  {
+    title: "Corporate Event Management",
+    description:
+      "Bring your professional gatherings together with organised planning and coordinated execution. We provide event management support for corporate clients, with arrangements tailored to the nature and scale of the event.",
+    icon: "/icons/Gradient Conference Stage Line Art 1.svg",
+    alt: "Corporate event management",
+  },
+  {
+    title: "Birthday & Private Party Planning",
+    description:
+      "From birthdays and family celebrations to bachelor parties, we help organise occasions that reflect the host's preferences, guest requirements and budget.",
+    icon: "/icons/Elegant Gradient Birthday Stage Arch 1.svg",
+    alt: "Birthday and private party planning",
   },
   {
     title: "Catering",
     description:
-      "Delight your guests with delicious menus, thoughtful presentation, and catering arrangements for every occasion.",
-  },
-  {
-    title: "Decoration",
-    description:
-      "Transform your event with beautiful floral arrangements, creative themes, and stunning decorative details.",
-  },
-  {
-    title: "Photography",
-    description:
-      "Capture the special moments of your celebration with memorable event photography and coverage.",
-  },
-  {
-    title: "Entertainment",
-    description:
-      "Make your celebration unforgettable with music, DJs, performances, and entertainment for your guests.",
+      "Food is an essential part of many celebrations. Our catering services focus especially on pure vegetarian cuisine, including traditional Indian dishes and Indianised versions of international favourites.",
+    icon: "/icons/Gradient Conference Stage Line Art 1.svg",
+    alt: "Catering services",
   },
 ];
 
@@ -39,23 +49,18 @@ export default function OurServices() {
       aria-labelledby="services-heading"
     >
       <div className={styles.container}>
-        <div className={styles.sectionHeader}>
-          <p className={styles.eyebrow}>WHAT WE OFFER</p>
-
+        <header className={styles.sectionHeader}>
           <h2
             id="services-heading"
             className={styles.heading}
           >
-            Our Services
+            OUR EVENT MANAGEMENT SERVICES
           </h2>
 
           <p className={styles.intro}>
-            From selecting the perfect venue to planning every
-            little detail, we bring all your event needs together
-            under one roof. Our team works to make every occasion
-            special, seamless, and memorable.
+            One Event Partner. Multiple Ways to Make It Happen.
           </p>
-        </div>
+        </header>
 
         <div className={styles.servicesGrid}>
           {services.map((service) => (
@@ -63,10 +68,15 @@ export default function OurServices() {
               key={service.title}
               className={styles.serviceCard}
             >
-              <div
-                className={styles.iconContainer}
-                aria-hidden="true"
-              />
+              <div className={styles.iconContainer}>
+                <Image
+                  src={service.icon}
+                  alt={service.alt}
+                  width={64}
+                  height={64}
+                  className={styles.serviceIcon}
+                />
+              </div>
 
               <h3 className={styles.serviceTitle}>
                 {service.title}
@@ -82,4 +92,3 @@ export default function OurServices() {
     </section>
   );
 }
-

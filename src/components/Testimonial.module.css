@@ -4,11 +4,22 @@
 ========================= */
 
 .testimonialsSection {
+  position: relative;
+  isolation: isolate;
+  box-sizing: border-box;
   width: 100%;
   padding: 85px 0;
   overflow: hidden;
-  background-color: #FDFBF2;
+
+  background-image: url("/contact-details-bg.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 }
+
+/* =========================
+   CONTAINER
+========================= */
 
 .container {
   box-sizing: border-box;
@@ -233,6 +244,8 @@
 @media (max-width: 991.98px) {
   .testimonialsSection {
     padding: 70px 0;
+    background-position: center center;
+    background-size: cover;
   }
 
   .container {
@@ -286,6 +299,8 @@
 @media (max-width: 575.98px) {
   .testimonialsSection {
     padding: 55px 0;
+    background-position: center center;
+    background-size: cover;
   }
 
   .container {

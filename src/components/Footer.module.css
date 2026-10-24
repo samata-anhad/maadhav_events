@@ -1,14 +1,18 @@
 
+
 .footer {
   width: 100%;
   color: #ffffff;
-  background: linear-gradient(
-    232.77deg,
-    #04252a -1.31%,
-    #4c0f17 102.6%
-  );
+
+  /* Footer background image */
+  background-image: url("/footer-bg.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
   overflow: hidden;
 }
+
 
 .container {
   width: 100%;

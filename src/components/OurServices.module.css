@@ -1,30 +1,47 @@
 
-/* Main services section */
+/* ========================================
+   MAIN SERVICES SECTION
+======================================== */
 
 .servicesSection {
   width: 100%;
   padding: 90px 0;
-  background-color: #FDFBF2;
+  box-sizing: border-box;
+
+  background-image: url("/contact-details-bg.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 }
+
+/* ========================================
+   MAIN CONTAINER
+======================================== */
 
 .container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 30px;
+
+  box-sizing: border-box;
 }
 
-/* Section heading and paragraph */
+/* ========================================
+   SECTION HEADING AND PARAGRAPH
+======================================== */
 
 .sectionHeader {
   max-width: 760px;
   margin: 0 auto 48px;
+
   text-align: center;
 }
 
 .eyebrow {
   margin: 0 0 10px;
-  color: #7b2634;
+
+  color: #7B2634;
   font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.15em;
@@ -33,6 +50,7 @@
 
 .heading {
   margin: 0 0 18px;
+
   color: #04252A;
   font-size: 2.5rem;
   font-weight: 600;
@@ -42,13 +60,17 @@
 .intro {
   max-width: 720px;
   margin: 0 auto;
+
   color: #626262;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.8;
 }
 
-/* Desktop grid: three cards on the first row */
+/* ========================================
+   SERVICES GRID
+   DESKTOP: THREE CARDS IN FIRST ROW
+======================================== */
 
 .servicesGrid {
   display: grid;
@@ -56,24 +78,29 @@
   gap: 24px;
 }
 
-/* Service cards */
+/* ========================================
+   SERVICE CARDS
+======================================== */
 
 .serviceCard {
   grid-column: span 2;
 
   display: flex;
-  min-width: 0;
-  min-height: 290px;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
 
+  min-width: 0;
+  min-height: 290px;
+
   padding: 36px 26px;
+
   border: 1px solid rgba(4, 37, 42, 0.08);
   border-radius: 14px;
 
   background-color: #FFFFFF;
   color: #04252A;
+
   text-align: center;
 
   box-shadow: 0 6px 24px rgba(4, 37, 42, 0.045);
@@ -85,7 +112,9 @@
     border-color 0.3s ease;
 }
 
-/* Center two cards on the second row */
+/* ========================================
+   CENTER TWO CARDS IN SECOND ROW
+======================================== */
 
 .serviceCard:nth-child(4) {
   grid-column: 2 / span 2;
@@ -95,41 +124,46 @@
   grid-column: 4 / span 2;
 }
 
-/* Custom SVG icon without a circular background */
+/* ========================================
+   SERVICE ICON CONTAINER
+======================================== */
 
 .iconContainer {
-  display: block;
-  width: 34px;
-  height: 34px;
-  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+  width: 64px;
+  height: 64px;
+
+  flex-shrink: 0;
   margin-bottom: 22px;
 
-  /* Default icon color */
-  background-color: #4C0F17;
+  transition: transform 0.3s ease;
+}
 
-  /* Use your SVG as a mask so its color can change */
-  -webkit-mask-image: url("/icons/service-icon.svg");
-  mask-image: url("/icons/service-icon.svg");
+/* Individual service icon image */
 
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
+.serviceIcon {
+  display: block;
 
-  -webkit-mask-position: center;
-  mask-position: center;
+  width: 100%;
+  height: 100%;
 
-  -webkit-mask-size: contain;
-  mask-size: contain;
+  object-fit: contain;
 
   transition:
-    background-color 0.3s ease,
+    filter 0.3s ease,
     transform 0.3s ease;
 }
 
-/* Service card title */
+/* ========================================
+   SERVICE CARD TITLE
+======================================== */
 
 .serviceTitle {
   margin: 0 0 14px;
+
   color: #04252A;
   font-size: 1.3rem;
   font-weight: 600;
@@ -138,10 +172,13 @@
   transition: color 0.3s ease;
 }
 
-/* Service card description */
+/* ========================================
+   SERVICE CARD DESCRIPTION
+======================================== */
 
 .serviceDescription {
   margin: 0;
+
   color: #666666;
   font-size: 0.94rem;
   font-weight: 400;
@@ -150,7 +187,9 @@
   transition: color 0.3s ease;
 }
 
-/* Card hover gradient */
+/* ========================================
+   CARD HOVER EFFECT
+======================================== */
 
 .serviceCard:hover {
   background: linear-gradient(
@@ -160,37 +199,50 @@
   );
 
   border-color: transparent;
+
   transform: translateY(-7px);
 
   box-shadow: 0 16px 35px rgba(4, 37, 42, 0.18);
 }
 
-/* Icon changes from burgundy to white */
+/* Move icon slightly upward on hover */
 
 .serviceCard:hover .iconContainer {
-  background-color: #FFFFFF;
   transform: translateY(-2px);
 }
 
-/* Heading and paragraph become white */
+/* Make white icons remain visible on dark cards */
+
+.serviceCard:hover .serviceIcon {
+  filter: brightness(0) invert(1);
+}
+
+/* Make title and description white on hover */
 
 .serviceCard:hover .serviceTitle,
 .serviceCard:hover .serviceDescription {
   color: #FFFFFF;
 }
 
-/* Keyboard accessibility */
+/* ========================================
+   KEYBOARD ACCESSIBILITY
+======================================== */
 
 .serviceCard:focus-within {
-  outline: 2px solid #7b2634;
+  outline: 2px solid #7B2634;
   outline-offset: 4px;
 }
 
-/* Tablet layout */
+/* ========================================
+   TABLET LAYOUT
+======================================== */
 
 @media (max-width: 991.98px) {
   .servicesSection {
     padding: 70px 0;
+
+    background-position: center center;
+    background-size: cover;
   }
 
   .container {
@@ -230,11 +282,16 @@
   }
 }
 
-/* Mobile layout */
+/* ========================================
+   MOBILE LAYOUT
+======================================== */
 
 @media (max-width: 575.98px) {
   .servicesSection {
     padding: 55px 0;
+
+    background-position: center center;
+    background-size: cover;
   }
 
   .container {
@@ -269,14 +326,16 @@
   .serviceCard:nth-child(5),
   .serviceCard:last-child {
     grid-column: auto;
+
     width: 100%;
     min-height: auto;
+
     padding: 30px 24px;
   }
 
   .iconContainer {
-    width: 34px;
-    height: 34px;
+    width: 56px;
+    height: 56px;
     margin-bottom: 18px;
   }
 
@@ -289,17 +348,24 @@
   }
 }
 
-/* Respect reduced-motion preferences */
+/* ========================================
+   REDUCED MOTION ACCESSIBILITY
+======================================== */
 
 @media (prefers-reduced-motion: reduce) {
   .serviceCard,
   .iconContainer,
+  .serviceIcon,
   .serviceTitle,
   .serviceDescription {
     transition: none;
   }
 
   .serviceCard:hover {
+    transform: none;
+  }
+
+  .serviceCard:hover .iconContainer {
     transform: none;
   }
 }
